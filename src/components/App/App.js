@@ -1,17 +1,22 @@
 import {HashRouter as Router, Route} from 'react-router-dom';
 import './App.css';
-import MovieList from '../MovieList/MovieList'
+// import MovieList from '../MovieList/MovieList'
+import StepOne from './StepOne/StepOne';
 
 function App() {
   return (
     <div className="App">
-      <h1>The Movies Saga!</h1>
+      <h1>Solo Project Spike</h1>
+      <h2>Password Generator</h2>
       <Router>        
         <Route path="/" exact>
-          <MovieList />
+          {/* <MovieList /> */}
+          <StepOne />
         </Route>
-        
         {/* Details page */}
+        <Route path="newpod" exact>
+          
+        </Route>
 
         {/* Add Movie page */}
       </Router>
