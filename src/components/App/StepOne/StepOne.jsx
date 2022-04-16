@@ -9,7 +9,7 @@ function StepOne() {
     const history = useHistory();
 
     const generateKeyCode = () => {
-        let keyCode = chance.string({ pool: 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789',  length: 10 })
+        let keyCode = chance.string({ pool: 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789',  length: 8 })
         console.log(keyCode);
 
         dispatch({ type: 'SET_KEYCODE', payload: keyCode })
