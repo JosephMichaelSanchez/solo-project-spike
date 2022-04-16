@@ -1,6 +1,6 @@
 import Chance from 'chance';
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 function StepOne() {
@@ -9,10 +9,11 @@ function StepOne() {
     const history = useHistory();
 
     const generateKeyCode = () => {
-        let keyCode = chance.string({ length: 8 })
+        let keyCode = chance.string({ pool: 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789',  length: 10 })
         console.log(keyCode);
 
         dispatch({ type: 'SET_KEYCODE', payload: keyCode })
+        history.push('/newpod');
 
 
 
@@ -23,7 +24,7 @@ function StepOne() {
 
     return (
         <>
-        <button onClick={generateKeyCode}>CREATE NEW POD</button>
+            <button onClick={generateKeyCode}>CREATE NEW POD</button>
         </>
     )
 }
